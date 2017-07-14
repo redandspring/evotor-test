@@ -1,4 +1,4 @@
-package ru.redandspring.springdemo.config;
+package ru.redandspring.evotortest.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,6 +10,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import ru.redandspring.evotortest.config.security.SecurityWebApplicationInitializer;
+import ru.redandspring.evotortest.config.security.WebSecurityConfig;
 
 /**
  * @author Alexander Tretyakov
@@ -17,9 +19,10 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
-        "ru.redandspring.**.controller"
+        "ru.redandspring.**.controller",
+        "ru.redandspring.**.config.security",
 })
-@Import(MainConfiguration.class)
+@Import({WebSecurityConfig.class, SecurityWebApplicationInitializer.class, MainConfiguration.class})
 public class WebConfiguration extends WebMvcConfigurerAdapter
 {
     @Bean
@@ -35,9 +38,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter
     // equivalents for <mvc:resources/> tags
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/").setCachePeriod(600);
-        registry.addResourceHandler("/images/**").addResourceLocations("/resources/images/").setCachePeriod(600);
-        registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/").setCachePeriod(600);
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(600);
     }
 
 

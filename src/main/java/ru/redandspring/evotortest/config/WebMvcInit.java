@@ -1,4 +1,4 @@
-package ru.redandspring.springdemo.config;
+package ru.redandspring.evotortest.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -24,7 +24,5 @@ public class WebMvcInit extends AbstractAnnotationConfigDispatcherServletInitial
     protected String[] getServletMappings() {
         return new String[] { "/" };
     }
-
-
 
 }

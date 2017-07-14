@@ -1,12 +1,18 @@
 # Evotor Test
 Регистрация и авторизация пользователя
 
+## Настройки
+БД: evotor-db
+Пользователь: evotor-user
+Пароль: password
+Дамп: dump.sql
+
 ## Stacks
 - Maven
 - Spring MVC
 - JDBCTemplate
 - Tomcat 8
-- H2
+- MySQL
 
 ## Credits
 
