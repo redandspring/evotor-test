@@ -3,8 +3,11 @@
 
 ## Настройки
 БД: evotor-db
+
 Пользователь: evotor-user
+
 Пароль: password
+
 Дамп: dump.sql
 
 ## Stacks
