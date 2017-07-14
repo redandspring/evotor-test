@@ -8,7 +8,7 @@
 
 Пароль: password
 
-Дамп: dump.sql
+Дамп: [dump.sql](https://github.com/redandspring/evotor-test/blob/master/dump.sql)
 
 ## Stacks
 - Maven
